@@ -1,0 +1,133 @@
+--- Import.pas.orig	2026-11-21 13:53:29.776989480 +0000
++++ Import.pas	2026-11-21 13:56:33.972968891 +0000
+@@ -1,5 +1,6 @@
+ 
+ const ForceSchFontID = 1;
++const HouseBlue = $624034; // #344062 as Altium BGR (6438964)
+ 
+ var
+     BrokenSCHFontManager : Integer; // for Alitum 19's broken SCH FontManager
+@@ -106,7 +107,26 @@
+ {==============================================================================}
+ 
+ Function LayerFromString(LName: String): TLayer;
++Var
++    MechN : Integer;
+ Begin
++    If CheckLeft(LName, 'Mechanical') Then Begin
++        MechN := 0;
++        Try
++            MechN := StrToInt(RightOf(LName, 'Mechanical'));
++        Except
++            MechN := 0;
++        End;
++        If (MechN >= 17) And (MechN <= 32) Then Begin
++            Result := eNoLayer;
++            Try
++                Result := LayerUtils.MechanicalLayer(MechN);
++            Except
++                Result := eNoLayer;
++            End;
++            Exit;
++        End;
++    End;
+     Case LName Of
+     'NoLayer':         Result := eNoLayer;
+     'TopLayer':        Result := eTopLayer;
+@@ -543,6 +563,7 @@
+ Var
+     lin : ISch_Line;
+     s1, s2 ,s3: String;
++    lw : Double;
+ Begin
+     lin := SchServer.SchObjectFactory(eLine, eCreate_Default);
+     If lin = Nil Then Exit;
+@@ -550,18 +571,20 @@
+     lin.Location := Point(MilsToCoord(Evaluate(s1)), MilsToCoord(Evaluate(s2)));
+     StrChop(GetBetween(Data, '(End ', ')'), ',', s1, s2);
+     lin.Corner := Point(MilsToCoord(Evaluate(s1)), MilsToCoord(Evaluate(s2)));
+-    GetBetween(Data, 'Width ', ')');
+-    If s3 < 10 Then Begin
++    lw := 0;
++    s3 := GetBetween(Data, '(Width ', ')');
++    If s3 <> '' Then lw := Evaluate(s3);
++    If lw < 10 Then Begin
+         lin.LineWidth := eSmall;
+     End;
+-    If s3 > 10 Then Begin
++    If lw > 10 Then Begin
+         lin.LineWidth := eMedium;
+     End;
+-    If s3 > 12 Then Begin
++    If lw > 12 Then Begin
+         lin.LineWidth := eLarge;
+     End;
+     lin.LineStyle := eLineStyleSolid;
+-    lin.Color := $000000; // NOTE: TODO:
++    lin.Color := HouseBlue;
+     lin.OwnerPartId := Evaluate(GetBetween(Data, '(Part ', ')'));
+     lin.OwnerPartDisplayMode := sy.DisplayMode;
+     sy.AddSchObject(lin);
+@@ -597,7 +620,7 @@
+     End Else Begin
+         rect.Transparent := True;
+     End;
+-    rect.Color := $000000; // NOTE: TODO:
++    rect.Color := HouseBlue;
+     rect.OwnerPartId := Evaluate(GetBetween(Data, '(Part ', ')'));
+     rect.OwnerPartDisplayMode := sy.DisplayMode;
+     sy.AddSchObject(rect);
+@@ -624,7 +647,7 @@
+     If s3 > 12 Then Begin
+         arc.LineWidth := eLarge;
+     End;
+-    arc.Color := $000000; // NOTE: TODO:
++    arc.Color := HouseBlue;
+     arc.StartAngle := Evaluate(GetBetween(Data, '(StartAngle ', ')'));
+     arc.EndAngle := Evaluate(GetBetween(Data, '(EndAngle ', ')'));
+     arc.OwnerPartId := Evaluate(GetBetween(Data, '(Part ', ')'));
+@@ -663,7 +686,7 @@
+         End;
+     End;
+     pol.LineWidth := eZeroSize; // NOTE: TODO:
+-    pol.Color := $000000; // NOTE: TODO:
++    pol.Color := HouseBlue;
+     pol.IsSolid := True;
+     pol.OwnerPartId := Evaluate(GetBetween(Data, '(Part ', ')'));
+     pol.OwnerPartDisplayMode := sy.DisplayMode;
+@@ -686,7 +709,7 @@
+     txt.Orientation := SY_GetAngle(GetBetween(Data, '(Rotation ', ')'));
+     txt.FontID := SY_GetFont(Evaluate(GetBetween(Data, 'Height ', ')')), txt.Orientation, GetBetween(Data, '(Font "', '")'), GetBetween(Data, '(Bold ', ')') = 'True', GetBetween(Data, '(Italic ', ')') = 'True', GetBetween(Data, '(Underline ', ')') = 'True');
+     txt.Justification := TextJustificationFromString(GetBetween(Data, '(Justification ', ')'));
+-    txt.Color := $000000; // NOTE: TODO:
++    txt.Color := HouseBlue;
+     txt.Text := GetBetween(Data, '(Value "', '")');
+     txt.OwnerPartId := Evaluate(GetBetween(Data, '(Part ', ')'));
+     txt.OwnerPartDisplayMode := sy.DisplayMode;
+@@ -714,7 +737,7 @@
+     prm.Orientation := SY_GetAngle(GetBetween(Data, '(Rotation ', ')'));
+     prm.FontID := SY_GetFont(Evaluate(GetBetween(Data, 'Height ', ')')), prm.Orientation, GetBetween(Data, '(Font "', '")'), GetBetween(Data, '(Bold ', ')') = 'True', GetBetween(Data, '(Italic ', ')') = 'True', GetBetween(Data, '(Underline ', ')') = 'True');
+     prm.Justification := TextJustificationFromString(GetBetween(Data, '(Justification ', ')'));
+-    prm.Color := $000000;
++    prm.Color := HouseBlue;
+     prm.Text := GetBetween(Data, '(Value "', '")');
+     prm.OwnerPartId := Evaluate(GetBetween(Data, '(Part ', ')'));
+     prm.OwnerPartDisplayMode := sy.DisplayMode;
+@@ -742,7 +765,7 @@
+     prm.Orientation := SY_GetAngle(GetBetween(Data, '(Rotation ', ')'));
+     prm.FontID := SY_GetFont(Evaluate(GetBetween(Data, 'Height ', ')')), prm.Orientation, GetBetween(Data, '(Font "', '")'), GetBetween(Data, '(Bold ', ')') = 'True', GetBetween(Data, '(Italic ', ')') = 'True', GetBetween(Data, '(Underline ', ')') = 'True');
+     prm.Justification := TextJustificationFromString(GetBetween(Data, '(Justification ', ')'));
+-    prm.Color := $000000;
++    prm.Color := HouseBlue;
+     prm.Text := GetBetween(Data, '(Value "', '")');
+     prm.OwnerPartId := Evaluate(GetBetween(Data, '(Part ', ')'));
+     prm.OwnerPartDisplayMode := sy.DisplayMode;
+@@ -761,7 +784,7 @@
+     // Define the pin parameters.
+     StrChop(GetBetween(Data, '(Location ', ')'), ',', s1, s2);
+     pin.Location := Point(MilsToCoord(Evaluate(s1)), MilsToCoord(Evaluate(s2)));
+-    pin.Color := $000000; // NOTE: TODO:
++    pin.Color := HouseBlue;
+     pin.Orientation := SY_GetAngle(GetBetween(Data, '(Rotation ', ')'));
+     Case GetBetween(Data, '(PinType ', ')') Of
+     'IO': pin.Electrical := eElectricIO;
