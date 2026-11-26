@@ -16,6 +16,7 @@ manufacturer datasheet, and imports into Altium without hand fixing.
 - **House standard is the spec.** `reference/house-standard.md`. Where an older note disagrees (1 mm grid,
   5 mm pins, 3 mm pitch, `#073763`, light-grey resistor fill) the house standard wins.
 - **Chips 300 mil pins; everything else (R, C, L, diodes, transistors, connectors) 100 mil.**
+- **Every pin on the 100 mil grid, root AND wire end** (user rule 2026-11-26): lengths 100 (chips 300), no 80 mil pins; verify ConnectionX/Y, not only Location.
 - **Work in scratch libraries.** Never write into `libs/` (or any production library) until the user approves.
 - **Release file names carry a timestamp**: `sch-dd-mm-yy-HH-MM.SchLib` and `pcb-dd-mm-yy-HH-MM.PcbLib` (24 h local time, get it with `date +%d-%m-%y-%H-%M`); each release is a NEW file, never an overwrite. Scratch work files keep fixed names. The same names are used in every project.
 - **Footprint name = package name only** (`SMB`, `SOT26`, `D0008A`, `CP-32-12`, `T3255Y-8`, `IND1028`, `RES0603`); never add the MPN.
