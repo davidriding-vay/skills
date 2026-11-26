@@ -11,9 +11,9 @@ match `reference/house-standard.md`.
    (PyMuPDF; run without `-I`). WSL has no `pdftotext` or `jq`, and `/tmp` is wiped when WSL restarts.
 2. Read the pin table, package drawing and land-pattern figure. Cite page numbers. Never use
    Comment/Description/Value from a library, distributor pages or memory as a source.
-3. Work in scratch copies of the libraries. Never write to `libs/` until the user approves.
+3. Work in a fresh scratch pair of libraries in `scratch/` (created with `app_create_document`). The workspace is the source of truth; there are no project libraries (`libs/`) to write to.
 4. Check what is in front: `app_get_active_document`. A tool given a `library_path` of a file that is not
-   open can silently act on whatever library is in front (it ran on `libs/schlib.schlib` once, read-only).
+   open can silently act on whatever library is in front (it once ran on a project library instead, read-only).
    Open files with `app_set_active_document`.
 5. Length units: `length_units` is per session and defaults to mil. A length with no unit in its name is read in the
    session unit, whatever the tool description says (1.6 became 0.04064 mm in a mil session). Set mm for footprint

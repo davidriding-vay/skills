@@ -17,10 +17,9 @@ manufacturer datasheet, and imports into Altium without hand fixing.
   5 mm pins, 3 mm pitch, `#073763`, light-grey resistor fill) the house standard wins.
 - **Chips 300 mil pins; everything else (R, C, L, diodes, transistors, connectors) 100 mil.**
 - **Every pin's hotspot (wire end, ConnectionX/Y) on the 100 mil grid** (user rule 2026-11-26); the body end may be off grid (BJT/MOSFET C/E/S/D: 80 mil pins, roots +-120, hotspots +-200). Verify ConnectionX/Y with obj_query ePin, not Location.
-- **Work in scratch libraries.** Never write into `libs/` (or any production library) until the user approves.
-- **Release file names carry a timestamp**: `sch-dd-mm-yy-HH-MM.SchLib` and `pcb-dd-mm-yy-HH-MM.PcbLib` (24 h local time, get it with `date +%d-%m-%y-%H-%M`); each release is a NEW file, never an overwrite. Scratch work files keep fixed names. The same names are used in every project.
+- **The Altium 365 workspace is the source of truth** (user decision 2026-11-26): existing symbols, footprints and components are read from the workspace (`altium365_run_query`, `sch_place_vault_components`), and the finished part goes back to the workspace (step 8). The project template has no `libs/` library files any more; do not create or write project libraries. Build each part in a FRESH scratch pair of libraries in `scratch/` (`app_create_document`, e.g. `work.SchLib` / `work.PcbLib`), and delete them once the part is uploaded and the user has accepted it.
 - **Footprint name = package name only** (`SMB`, `SOT26`, `D0008A`, `CP-32-12`, `T3255Y-8`, `IND1028`, `RES0603`); never add the MPN.
-- **Capacitor symbols copy the user's reference layout** (`C0603C104K5RACTU`, see house-standard.md); copy it with `lib_copy_component` in the same library, then set MPN/Comment/DES/description/footprint.
+- **Capacitor symbols copy the user's reference layout** (exact geometry in house-standard.md; the workspace symbol of `GRM31CR72A105KA01L`, CMP-00477, has it): build it with that geometry in the scratch library, then set MPN/Comment/DES/description/footprint.
 - **Never bypass a tool check** (pin table, footprint vs drawing). If a check blocks you, say what differs and
   let the user decide; only the user switches checks off.
 - **Verify by reading back.** Colours, positions and font ids written with `obj_modify` must be queried back.
@@ -42,7 +41,7 @@ manufacturer datasheet, and imports into Altium without hand fixing.
    Group IC pins by function, Part A signals / Part B power.
 4. Build the footprint, apply the house layer rules, check and render it (`scripts/tools/fp_house.py` for 2-pin chip passives).
 5. Build the symbol, set `MPN` and uppercase `DES`, the component Comment (`obj_modify` eSchComponent `Comment.Text`) = the MPN, kept hidden (it fills the symbol's Name field in Altium 365 and cannot be changed after upload), description; link the footprint.
-6. Run `lib_check_schlib` / `lib_check_pcblib`, read back styles, save only the scratch files.
+6. Run `lib_check_schlib` / `lib_check_pcblib`, read back styles, save only the scratch files (never a project library).
 7. Log the work in the project's `HOUSE_STANDARD.md` (built, verified values with sources, open points).
 8. Upload to Altium 365 through Nexar, automatically, when `altium365_check_setup` is ok: publish the symbol and footprint into `Components/Models/Symbols` / `Footprints` and release the component as the next `CMP-NNNNN` in the best-matching `Components/...` folder (e.g. a MOSFET goes to `Transistors`), parameters MPN and DES only. Follow `reference/altium365-upload.md` exactly (duplicate checks first; nothing can be deleted afterwards).
 

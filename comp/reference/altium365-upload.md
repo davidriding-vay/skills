@@ -10,7 +10,7 @@ user's clone until released).
 2. `altium365_check_setup` ok. Workspace URL from `altium365_list_workspaces` (one workspace: use it).
 3. Parameters: ONLY `MPN` and `DES` (user decision 2026-11-25, no Manufacturer or others). Do not pass `type`.
    Description = the symbol description. `componentComment` = the MPN (it fills the component's Name field in Altium 365; user requirement 2026-11-26).
-4. Never upload a whole library: one SchLib and one PcbLib per part, written to `scratch/upload/`
+4. Never upload a whole library: one SchLib and one PcbLib per part, written to `scratch/upload/` (throwaway files: delete them after the upload; the workspace is the source of truth)
    (footprint: `lib_save_footprint_library`; symbol: `app_create_document` SCHLIB with add_to_project false,
    `lib_copy_component`, `lib_delete_component` Component_1, save).
 

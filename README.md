@@ -18,7 +18,7 @@ Ask Claude Code, for example:
 2. Builds the footprint (pads, house mechanical layers M5-M38, courtyard, designator) and a detailed 3D STEP model with CadQuery.
 3. Builds the symbol (house colours, fonts, 100 mil pins, 300 mil on ICs, parameters `MPN` and `DES`, component Comment = MPN, which fills the Name field in Altium 365).
 4. Checks pins against the datasheet table, pads against the drawing, symbol against footprint.
-5. Saves to scratch libraries only (`scratch/trial1.SchLib`, `scratch/trial1.PcbLib`). Nothing goes into `libs/` until the user approves.
+5. Builds in a throwaway pair of scratch libraries (`scratch/`), never in a project library. The Altium 365 workspace is the source of truth: existing parts are read from it and finished parts go back to it.
 6. Optionally uploads the part to Altium 365 through Nexar, as the next free `CMP-NNNNN` in the best-matching `Components/...` folder.
 7. Logs what was built and what is still unverified in the project's `HOUSE_STANDARD.md`.
 
