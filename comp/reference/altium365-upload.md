@@ -9,7 +9,7 @@ user's clone until released).
 1. The part passed `lib_check_schlib` / `lib_check_pcblib`, the symbol links to the footprint, pin/pad parity ok.
 2. `altium365_check_setup` ok. Workspace URL from `altium365_list_workspaces` (one workspace: use it).
 3. Parameters: ONLY `MPN` and `DES` (user decision 2026-11-25, no Manufacturer or others). Do not pass `type`.
-   Description = the symbol description. Leave `componentComment` out (see the notes at the end).
+   Description = the symbol description. `componentComment` = the MPN (it fills the component's Name field in Altium 365; user requirement 2026-11-26).
 4. Never upload a whole library: one SchLib and one PcbLib per part, written to `scratch/upload/`
    (footprint: `lib_save_footprint_library`; symbol: `app_create_document` SCHLIB with add_to_project false,
    `lib_copy_component`, `lib_delete_component` Component_1, save).
@@ -31,7 +31,7 @@ user's clone until released).
 3. Next component number: take the highest `CMP-NNNNN` (five digits) from the names query, +1 (on 2026-11-25 the
    last was CMP-00474, ZXMP3A13F became CMP-00475). If the release answers `AddALU_ItemsDuplicate`, add 1 and retry.
 4. `altium365_release_component` with workspaceUrl, componentParentFolderId, componentItemName `CMP-NNNNN`,
-   componentDescription, parameters [{name:"MPN"},{name:"DES"}], symbol {id}, footprints [{id}].
+   componentComment (= MPN), componentDescription, parameters [{name:"MPN"},{name:"DES"}], symbol {id}, footprints [{id}].
    Preview, then `confirm=true`.
 5. Verify: `altium365_get_component` (name `CMP-NNNNN-1`, only MPN and DES), and offer the Explorer check.
 6. Log in the project `HOUSE_STANDARD.md`: item names, folders, date. Report in two lines.
@@ -110,3 +110,11 @@ the folder contents in Explorer or use a `name` containing search through the li
   the user's unsaved sheets), one PcbLib per unique footprint (`lib_save_footprint_library` with `items`).
 - Publish every unique footprint once and reuse its revision id in all components that use it (RES1206, CAP1206, TP-TH).
 - Numbers: next free CMP-NNNNN in sequence; a release the classifier refuses is left out (note the gap).
+
+## Name field (2026-11-26, user requirement)
+The Name field of an Altium 365 component is the release's `componentComment`. ALWAYS set it to the MPN. The test of
+leaving it out (CMP-00477..00498 were released that way) left Name blank. The `comment` of an existing component cannot be
+changed through the API tools: `altium365_set_component_parameters` only edits parameters (a parameter called Comment does
+not fill it and only adds a stray parameter), and a release needs a new item name. Fix such parts by hand in the component
+editor, or accept them. The earlier note about leaving `componentComment` out is superseded: if the Comment then shows
+on a placed part, hide it on the instance (`obj_modify` eParameter Name=Comment IsHidden true) instead.

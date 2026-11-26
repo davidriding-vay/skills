@@ -40,7 +40,7 @@ manufacturer datasheet, and imports into Altium without hand fixing.
 3. Decide the symbol type: IC (300 mil pins, 1500 mil body, `#CFE5F3`) or other (100 mil pins, existing glyph style).
    Group IC pins by function, Part A signals / Part B power.
 4. Build the footprint, apply the house layer rules, check and render it (`scripts/tools/fp_house.py` for 2-pin chip passives).
-5. Build the symbol, set `MPN` and uppercase `DES`, hidden `Comment`, description; link the footprint.
+5. Build the symbol, set `MPN` and uppercase `DES`, the component Comment (`obj_modify` eSchComponent `Comment.Text`) = the MPN, kept hidden (it fills the symbol's Name field in Altium 365 and cannot be changed after upload), description; link the footprint.
 6. Run `lib_check_schlib` / `lib_check_pcblib`, read back styles, save only the scratch files.
 7. Log the work in the project's `HOUSE_STANDARD.md` (built, verified values with sources, open points).
 8. Upload to Altium 365 through Nexar, automatically, when `altium365_check_setup` is ok: publish the symbol and footprint into `Components/Models/Symbols` / `Footprints` and release the component as the next `CMP-NNNNN` in the best-matching `Components/...` folder (e.g. a MOSFET goes to `Transistors`), parameters MPN and DES only. Follow `reference/altium365-upload.md` exactly (duplicate checks first; nothing can be deleted afterwards).
