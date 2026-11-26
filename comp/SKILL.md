@@ -16,6 +16,7 @@ manufacturer datasheet, and imports into Altium without hand fixing.
 - **House standard is the spec.** `reference/house-standard.md`. Where an older note disagrees (1 mm grid,
   5 mm pins, 3 mm pitch, `#073763`, light-grey resistor fill) the house standard wins.
 - **Chips 300 mil pins; everything else (R, C, L, diodes, transistors, connectors) 100 mil.**
+- **Every MOSFET symbol, N- or P-channel, draws the body diode** between drain and source (user rule 2026-11-26; reference ZXMP3A13F rev 4 / CMP-00475-4, see house-standard.md). JFETs have none.
 - **Every pin's hotspot (wire end, ConnectionX/Y) on the 100 mil grid** (user rule 2026-11-26); the body end may be off grid (BJT/MOSFET C/E/S/D: 80 mil pins, roots +-120, hotspots +-200). Verify ConnectionX/Y with obj_query ePin, not Location.
 - **The Altium 365 workspace is the source of truth** (user decision 2026-11-26): existing symbols, footprints and components are read from the workspace (`altium365_run_query`, `sch_place_vault_components`), and the finished part goes back to the workspace (step 8). The project template has no `libs/` library files any more; do not create or write project libraries. Build each part in a FRESH scratch pair of libraries in `scratch/` (`app_create_document`, e.g. `work.SchLib` / `work.PcbLib`), and delete them once the part is uploaded and the user has accepted it.
 - **Footprint name = package name only** (`SMB`, `SOT26`, `D0008A`, `CP-32-12`, `T3255Y-8`, `IND1028`, `RES0603`); never add the MPN.
