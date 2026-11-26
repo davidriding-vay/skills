@@ -91,6 +91,16 @@ Alternative to Nexar: a workspace API token (Admin, Developer) in `EDA_AGENT_ALT
 | Footprint upload fails with a missing id | The eda-agent footprint patch is not applied |
 | A pin-table or drawing check blocks the build | Read what differs; only the user may switch the check off (eda-agent Config tab) |
 
+### Sources of truth
+
+| What | Where |
+|---|---|
+| Parts: symbols, footprints (with 3D models), components | The Altium 365 workspace |
+| The skill, scripts, this README and the house-style files (`house-standard.md`, `readme-textbox.txt`) | This git repo |
+| A design's own log and README text box (`HOUSE_STANDARD.md`, `README_TEXTBOX.txt`, `skills.zip`) | The project template, updated by hand from this repo when needed |
+
+Edit the rules here first, then update the installed copy (`~/.claude/skills/comp`) and, when needed, the project template.
+
 ### Keeping it current
 
 When the standard changes, update `house-standard.md`, the project `HOUSE_STANDARD.md` and `readme-textbox.txt` together, then commit here.
