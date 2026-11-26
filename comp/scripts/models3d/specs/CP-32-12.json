@@ -1,0 +1,322 @@
+{
+ "footprint": "CP-32-12",
+ "source": "ADV7280 data sheet Rev A, Figure 18 CP-32-12 outline dimensions p.28; nominal dims",
+ "drawing": {
+  "body_x": [
+   4.9,
+   5.1
+  ],
+  "body_y": [
+   4.9,
+   5.1
+  ],
+  "height": [
+   0,
+   0.8
+  ]
+ },
+ "groups": {
+  "lead": [
+   {
+    "kind": "box",
+    "name": "lead",
+    "role": "tin",
+    "x0": -2.5,
+    "y0": -0.125,
+    "z0": 0,
+    "x1": -2.1,
+    "y1": 0.125,
+    "z1": 0.2
+   }
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "body",
+   "x0": -2.5,
+   "y0": -2.5,
+   "z0": 0.02,
+   "x1": 2.5,
+   "y1": 2.5,
+   "z1": 0.75
+  },
+  {
+   "kind": "box",
+   "name": "ep",
+   "role": "metal",
+   "x0": -1.8,
+   "y0": -1.8,
+   "z0": 0,
+   "x1": 1.8,
+   "y1": 1.8,
+   "z1": 0.2
+  },
+  {
+   "kind": "dot",
+   "name": "pin1_dot",
+   "role": "laser",
+   "cx": -1.9,
+   "cy": 1.9,
+   "r": 0.2,
+   "z1": 0.75
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 1.75,
+   "dy": 0,
+   "dz": 0
+  }
+ ]
+}

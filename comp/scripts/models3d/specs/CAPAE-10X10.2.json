@@ -1,0 +1,95 @@
+{
+ "footprint": "CAPAE-10X10.2",
+ "source": "Panasonic FC series (type V) size code G, p.1 dimension table: D 10.0, L 10.2, A/B 10.3, H 12.0 max, I 3.5, W 0.9, P 4.6, K 0.7; seat height H-L, terminal foot thickness and riser assumed",
+ "drawing": {
+  "body_x": [
+   10.1,
+   10.5
+  ],
+  "body_y": [
+   10.1,
+   10.5
+  ],
+  "height": [
+   0,
+   12
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "seat",
+   "role": "body",
+   "x0": -5.15,
+   "y0": -5.15,
+   "z0": 0.05,
+   "x1": 5.15,
+   "y1": 5.15,
+   "z1": 1.8,
+   "edge_r": 0.3
+  },
+  {
+   "kind": "cylinder",
+   "name": "can",
+   "role": "metal",
+   "r": 5,
+   "cx": 0,
+   "cy": 0,
+   "z0": 1.8,
+   "z1": 12
+  },
+  {
+   "kind": "dot",
+   "name": "polarity",
+   "role": "ink",
+   "cx": -3.4,
+   "cy": 0,
+   "r": 0.5,
+   "z1": 12
+  },
+  {
+   "kind": "box",
+   "name": "foot1",
+   "role": "tin",
+   "x0": -5.85,
+   "y0": -0.45,
+   "z0": 0,
+   "x1": -2.3,
+   "y1": 0.45,
+   "z1": 0.2
+  },
+  {
+   "kind": "box",
+   "name": "riser1",
+   "role": "tin",
+   "x0": -5.85,
+   "y0": -0.45,
+   "z0": 0,
+   "x1": -5.6,
+   "y1": 0.45,
+   "z1": 1.2
+  },
+  {
+   "kind": "box",
+   "name": "foot2",
+   "role": "tin",
+   "x0": 2.3,
+   "y0": -0.45,
+   "z0": 0,
+   "x1": 5.85,
+   "y1": 0.45,
+   "z1": 0.2
+  },
+  {
+   "kind": "box",
+   "name": "riser2",
+   "role": "tin",
+   "x0": 5.6,
+   "y0": -0.45,
+   "z0": 0,
+   "x1": 5.85,
+   "y1": 0.45,
+   "z1": 1.2
+  }
+ ]
+}

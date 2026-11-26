@@ -1,0 +1,334 @@
+{
+ "footprint": "T3255Y-8",
+ "source": "ADI/Maxim 21-100156 rev F p.1 (32L TQFN 5x5x0.75 side-wettable); nominal dims; pin-1 chamfer on pad assumed",
+ "drawing": {
+  "body_x": 5,
+  "body_y": 5,
+  "height": [
+   0,
+   0.8
+  ]
+ },
+ "groups": {
+  "lead": [
+   {
+    "kind": "box",
+    "name": "lead",
+    "role": "tin",
+    "x0": -2.5,
+    "y0": -0.125,
+    "z0": 0,
+    "x1": -2.1,
+    "y1": 0.125,
+    "z1": 0.203
+   }
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "body",
+   "x0": -2.5,
+   "y0": -2.5,
+   "z0": 0.02,
+   "x1": 2.5,
+   "y1": 2.5,
+   "z1": 0.75
+  },
+  {
+   "kind": "extrude",
+   "name": "epad",
+   "role": "metal",
+   "outline": [
+    [
+     -1.2,
+     1.55
+    ],
+    [
+     1.55,
+     1.55
+    ],
+    [
+     1.55,
+     -1.55
+    ],
+    [
+     -1.55,
+     -1.55
+    ],
+    [
+     -1.55,
+     1.2
+    ]
+   ],
+   "z0": 0,
+   "z1": 0.203
+  },
+  {
+   "kind": "dot",
+   "name": "pin1",
+   "role": "laser",
+   "cx": -2,
+   "cy": 2,
+   "r": 0.15,
+   "z1": 0.75
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 1.75,
+   "dy": 0,
+   "dz": 0
+  }
+ ]
+}

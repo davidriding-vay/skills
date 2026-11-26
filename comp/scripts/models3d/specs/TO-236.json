@@ -1,0 +1,118 @@
+{
+ "footprint": "TO-236",
+ "source": "onsemi MMBT3906L/MMBT3904L, case 318 SOT-23 (TO-236) issue AU; nominal dims; bend shape assumed",
+ "drawing": {
+  "body_x": [
+   2.8,
+   3.04
+  ],
+  "body_y": [
+   1.2,
+   1.4
+  ],
+  "height": [
+   0,
+   1.11
+  ],
+  "span_y": [
+   2.1,
+   2.64
+  ]
+ },
+ "groups": {
+  "lead": [
+   {
+    "kind": "prism",
+    "name": "lead_gw",
+    "role": "tin",
+    "axis": "x",
+    "x0": -0.22,
+    "x1": 0.22,
+    "profile": [
+     [
+      1.2,
+      0
+     ],
+     [
+      0.8,
+      0
+     ],
+     [
+      0.66,
+      0.3
+     ],
+     [
+      0.4,
+      0.3
+     ],
+     [
+      0.4,
+      0.44
+     ],
+     [
+      0.8,
+      0.44
+     ],
+     [
+      0.94,
+      0.14
+     ],
+     [
+      1.2,
+      0.14
+     ]
+    ]
+   }
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "body",
+   "x0": -1.45,
+   "y0": -0.65,
+   "z0": 0.06,
+   "x1": 1.45,
+   "y1": 0.65,
+   "z1": 1,
+   "edge_r": 0.08
+  },
+  {
+   "kind": "dot",
+   "name": "pin1_mark",
+   "role": "laser",
+   "cx": -1.05,
+   "cy": -0.3,
+   "r": 0.12,
+   "z1": 1
+  },
+  {
+   "kind": "instance",
+   "name": "lead3",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "name": "lead1",
+   "group": "lead",
+   "rot": 180,
+   "dx": -0.95,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "name": "lead2",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0.95,
+   "dy": 0,
+   "dz": 0
+  }
+ ]
+}

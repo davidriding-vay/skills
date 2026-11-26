@@ -1,0 +1,89 @@
+{
+ "footprint": "PowerDI5",
+ "source": "Diodes PDU540 DS30759 Rev 4-2, PowerDI5 package outline p.5; nominal dims; slug extent estimated",
+ "drawing": {
+  "body_x": [
+   3.9,
+   4.05
+  ],
+  "body_y": [
+   5.3,
+   5.45
+  ],
+  "height": [
+   0,
+   1.15
+  ],
+  "span_y": [
+   6.4,
+   6.6
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "body",
+   "x0": -1.983,
+   "y0": -2.685,
+   "z0": 0.025,
+   "x1": 1.983,
+   "y1": 2.685,
+   "z1": 1.1,
+   "taper": 5
+  },
+  {
+   "kind": "box",
+   "name": "anode_lead_a",
+   "role": "tin",
+   "x0": -1.365,
+   "y0": -3.252,
+   "z0": 0,
+   "x1": -0.475,
+   "y1": -2.405,
+   "z1": 0.381
+  },
+  {
+   "kind": "box",
+   "name": "anode_lead_b",
+   "role": "tin",
+   "x0": 0.475,
+   "y0": -3.252,
+   "z0": 0,
+   "x1": 1.365,
+   "y1": -2.405,
+   "z1": 0.381
+  },
+  {
+   "kind": "box",
+   "name": "heat_slug",
+   "role": "tin",
+   "x0": -1.527,
+   "y0": -1.049,
+   "z0": 0,
+   "x1": 1.527,
+   "y1": 2.5,
+   "z1": 0.381
+  },
+  {
+   "kind": "box",
+   "name": "cathode_tab",
+   "role": "tin",
+   "x0": -0.89,
+   "y0": 2.4,
+   "z0": 0,
+   "x1": 0.89,
+   "y1": 3.252,
+   "z1": 0.381
+  },
+  {
+   "kind": "dot",
+   "name": "pin1_mark",
+   "role": "laser",
+   "cx": -1.2,
+   "cy": 2,
+   "r": 0.25,
+   "z1": 1.1
+  }
+ ]
+}

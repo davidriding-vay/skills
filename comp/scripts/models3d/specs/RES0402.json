@@ -1,0 +1,53 @@
+{
+ "footprint": "RES0402",
+ "source": "Yageo AC/RC series typical dims (not fetched; Vishay CRCW p.11 cross-check)",
+ "drawing": {
+  "body_x": [
+   0.9,
+   1.1
+  ],
+  "body_y": [
+   0.4,
+   0.6
+  ],
+  "height": [
+   0,
+   0.4
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "body",
+   "x0": -0.5,
+   "y0": -0.25,
+   "z0": 0,
+   "x1": 0.5,
+   "y1": 0.25,
+   "z1": 0.3
+  },
+  {
+   "kind": "box",
+   "name": "t1",
+   "role": "tin",
+   "x0": -0.5,
+   "y0": -0.26,
+   "z0": 0,
+   "x1": -0.25,
+   "y1": 0.26,
+   "z1": 0.35
+  },
+  {
+   "kind": "box",
+   "name": "t2",
+   "role": "tin",
+   "x0": 0.25,
+   "y0": -0.26,
+   "z0": 0,
+   "x1": 0.5,
+   "y1": 0.26,
+   "z1": 0.35
+  }
+ ]
+}

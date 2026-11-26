@@ -1,0 +1,130 @@
+{
+ "footprint": "SOD-123",
+ "source": "Central Semiconductor CMHZ4678-4717 R7, SOD-123 case mechanical outline p.2; nominal dims; bend shape assumed",
+ "drawing": {
+  "body_x": [
+   2.5,
+   2.8
+  ],
+  "body_y": [
+   1.4,
+   1.8
+  ],
+  "height": [
+   0,
+   1.35
+  ],
+  "span_x": [
+   3.6,
+   3.9
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "body",
+   "x0": -1.325,
+   "y0": -0.8,
+   "z0": 0.05,
+   "x1": 1.325,
+   "y1": 0.8,
+   "z1": 1.2
+  },
+  {
+   "kind": "box",
+   "name": "cathode_band",
+   "role": "white",
+   "x0": -0.925,
+   "y0": -0.8,
+   "z0": 1.2,
+   "x1": -0.525,
+   "y1": 0.8,
+   "z1": 1.21
+  },
+  {
+   "kind": "prism",
+   "name": "lead_pin1_cathode",
+   "role": "tin",
+   "axis": "y",
+   "y0": -0.3,
+   "y1": 0.3,
+   "profile": [
+    [
+     -1.875,
+     0
+    ],
+    [
+     -1.52,
+     0
+    ],
+    [
+     -1.3,
+     0.35
+    ],
+    [
+     -1,
+     0.35
+    ],
+    [
+     -1,
+     0.5
+    ],
+    [
+     -1.38,
+     0.5
+    ],
+    [
+     -1.62,
+     0.15
+    ],
+    [
+     -1.875,
+     0.15
+    ]
+   ]
+  },
+  {
+   "kind": "prism",
+   "name": "lead_pin2_anode",
+   "role": "tin",
+   "axis": "y",
+   "y0": -0.3,
+   "y1": 0.3,
+   "profile": [
+    [
+     1.875,
+     0
+    ],
+    [
+     1.875,
+     0.15
+    ],
+    [
+     1.62,
+     0.15
+    ],
+    [
+     1.38,
+     0.5
+    ],
+    [
+     1,
+     0.5
+    ],
+    [
+     1,
+     0.35
+    ],
+    [
+     1.3,
+     0.35
+    ],
+    [
+     1.52,
+     0
+    ]
+   ]
+  }
+ ]
+}

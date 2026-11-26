@@ -1,0 +1,32 @@
+diff --git a/src/eda_agent/altium365.py b/src/eda_agent/altium365.py
+index 6172426..c3b0ff7 100644
+--- a/src/eda_agent/altium365.py
++++ b/src/eda_agent/altium365.py
+@@ -162,11 +162,12 @@ def gql_value(value: Any) -> str:
+ def publish_operation(kind: str) -> tuple[str, str]:
+     """(schema field, operation) creating a symbol or footprint from a file."""
+     name = {"symbol": "desCreateSymbol", "footprint": "desCreateFootprint"}[kind]
++    created = {"symbol": "id", "footprint": "footprintId"}[kind]
+     return name, (
+         "mutation($fileId: String!, $relativePath: String!, $folderId: ID!, "
+         "$ws: String!, $name: String!) { " + name + "(input: { files: { fileId: "
+         "$fileId, relativePath: $relativePath }, folderId: $folderId, name: $name, "
+-        "workspaceUrl: $ws }) { errors { message } id } }")
++        "workspaceUrl: $ws }) { errors { message } " + created + " } }")
+ 
+ 
+ def release_operation(spec: dict) -> str:
+diff --git a/src/eda_agent/tools/altium365.py b/src/eda_agent/tools/altium365.py
+index b03726b..9510c3c 100644
+--- a/src/eda_agent/tools/altium365.py
++++ b/src/eda_agent/tools/altium365.py
+@@ -141,7 +141,8 @@ def register_altium365_tools(mcp) -> None:
+             values["ws"] = session.permitted(workspace_url)
+             values["fileId"] = session.upload_file(source)
+             data = session.run_change(operation, values)
+-            made = (data.get(field_name) or {}).get("id")
++            payload = data.get(field_name) or {}
++            made = payload.get("id") or payload.get("footprintId")
+             problems = reported_errors(data, field_name)
+             if problems or not made:
+                 raise Altium365Error(f"{field_name} created nothing: "

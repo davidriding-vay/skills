@@ -1,0 +1,102 @@
+{
+ "footprint": "SMB",
+ "source": "onsemi 1SMB5.0AT3G series case 403A-03 Issue H p.7; nominal dims; J-lead shape assumed",
+ "drawing": {
+  "body_x": [
+   4.06,
+   4.6
+  ],
+  "body_y": [
+   3.3,
+   3.95
+  ],
+  "height": [
+   0,
+   2.28
+  ],
+  "span_x": [
+   5.21,
+   5.6
+  ]
+ },
+ "groups": {
+  "lead_px": [
+   {
+    "kind": "box",
+    "name": "leg",
+    "role": "tin",
+    "x0": 2.49,
+    "y0": -1.015,
+    "z0": 0,
+    "x1": 2.72,
+    "y1": 1.015,
+    "z1": 1.23
+   },
+   {
+    "kind": "box",
+    "name": "arm",
+    "role": "tin",
+    "x0": 2,
+    "y0": -1.015,
+    "z0": 1,
+    "x1": 2.72,
+    "y1": 1.015,
+    "z1": 1.23
+   },
+   {
+    "kind": "box",
+    "name": "foot",
+    "role": "tin",
+    "x0": 1.7,
+    "y0": -1.015,
+    "z0": 0,
+    "x1": 2.72,
+    "y1": 1.015,
+    "z1": 0.23
+   }
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "body",
+   "x0": -2.16,
+   "y0": -1.78,
+   "z0": 0.1,
+   "x1": 2.16,
+   "y1": 1.78,
+   "z1": 2.2,
+   "edge_r": 0.1
+  },
+  {
+   "kind": "box",
+   "name": "cathode_band",
+   "role": "white",
+   "x0": -1.95,
+   "y0": -1.78,
+   "z0": 2.2,
+   "x1": -1.45,
+   "y1": 1.78,
+   "z1": 2.21
+  },
+  {
+   "kind": "instance",
+   "name": "lead_pin2",
+   "group": "lead_px",
+   "rot": 0,
+   "dx": 0,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "name": "lead_pin1",
+   "group": "lead_px",
+   "rot": 180,
+   "dx": 0,
+   "dy": 0,
+   "dz": 0
+  }
+ ]
+}

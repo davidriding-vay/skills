@@ -22,6 +22,9 @@ Ask Claude Code, for example:
 | `comp/reference/altium365-upload.md` | Automatic upload to Altium 365 through Nexar, folder choice table, pitfalls |
 | `comp/reference/readme-textbox.txt` | Text for the project-template README text frame (setup, standard, Nexar) |
 | `comp/scripts/tools/` | Helpers: `extract.py` (PDF to text), `fp_house.py` (house layers for chip footprints), `symp.py` (example) |
+| `comp/scripts/models3d/` | `build_specs.py` rebuilds the `lib_create_3d_model` parameter sets for every footprint built so far (SMD packages, QFP/QFN, inductors, TO-220AB, electrolytic can, test point, banana jack, chips); `specs/*.json` are its output. Reconstructed from the build session, so they match what was built |
+| `comp/scripts/workflows/` | The two Claude Code workflow scripts used for the bulk jobs: `redo-3d-models.js` (agents read datasheets and return the 3D parameters) and `check-pad-positions.js` (agents compare library pads with datasheet land patterns). Read-only fan-outs; the Altium writes stay in the main session |
+| `comp/scripts/patches/eda-agent-publish-footprint-fix.patch` | Local fix for eda-agent: `desCreateFootprint` returns `footprintId`, not `id`. Apply with `git apply` in the eda-agent clone until the upstream fix is released |
 | `comp/scripts/import/`, `comp/reference/ascii-format.md` | Retired Import.pas route, kept for history only |
 
 ### Install
@@ -33,7 +36,7 @@ Copy the `comp` folder to `~/.claude/skills/comp` (Windows: `%USERPROFILE%\.clau
 - Altium Designer with the eda-agent MCP server connected (`/mcp`), see the eda-agent README.
 - Python 3 with PyMuPDF (`pip install pymupdf`) for the helper scripts.
 - CadQuery in the eda-agent environment (`pip install -e ".[models3d]"`) for the 3D models.
-- Optional, for the Altium 365 upload: a Nexar app and `eda-agent altium365-login` (steps in `comp/reference/readme-textbox.txt`, section 15). The upload relies on the footprint fix reported upstream for `altium365_publish_library_file`; until it is released, patch `publish_operation` to select `footprintId` for footprints.
+- Optional, for the Altium 365 upload: a Nexar app and `eda-agent altium365-login` (steps in `comp/reference/readme-textbox.txt`, section 15). The upload relies on the footprint fix reported upstream for `altium365_publish_library_file`; until it is released, apply `comp/scripts/patches/eda-agent-publish-footprint-fix.patch` in the eda-agent clone.
 
 ### Keeping it current
 

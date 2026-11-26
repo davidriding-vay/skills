@@ -1,0 +1,479 @@
+{
+ "footprint": "LQFP48",
+ "source": "STM32F103x8/xB DS5319 Rev 20, Table 62 LQFP48 mechanical data p.99; nominal dims; gull-wing bend shape assumed",
+ "drawing": {
+  "body_x": [
+   6.9,
+   7.1
+  ],
+  "body_y": [
+   6.9,
+   7.1
+  ],
+  "height": [
+   0,
+   1.6
+  ],
+  "span_x": [
+   8.9,
+   9.1
+  ],
+  "span_y": [
+   8.9,
+   9.1
+  ]
+ },
+ "groups": {
+  "lead": [
+   {
+    "kind": "prism",
+    "name": "lead_gull",
+    "role": "tin",
+    "axis": "y",
+    "y0": -0.11,
+    "y1": 0.11,
+    "profile": [
+     [
+      4.5,
+      0
+     ],
+     [
+      3.9,
+      0
+     ],
+     [
+      3.62,
+      0.7
+     ],
+     [
+      3.4,
+      0.7
+     ],
+     [
+      3.4,
+      0.85
+     ],
+     [
+      3.74,
+      0.85
+     ],
+     [
+      4.05,
+      0.15
+     ],
+     [
+      4.5,
+      0.15
+     ]
+    ]
+   }
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "body",
+   "x0": -3.5,
+   "y0": -3.5,
+   "z0": 0.1,
+   "x1": 3.5,
+   "y1": 3.5,
+   "z1": 1.5,
+   "edge_r": 0.1
+  },
+  {
+   "kind": "dot",
+   "name": "pin1_mark",
+   "role": "laser",
+   "cx": -2.7,
+   "cy": 2.7,
+   "r": 0.4,
+   "z1": 1.5
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -2.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -2.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": -0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 2.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 0,
+   "dx": 0,
+   "dy": 2.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -2.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -2.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": -0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 0.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 0.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 1.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 1.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 2.25,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 180,
+   "dx": 0,
+   "dy": 2.75,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -2.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -2.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": -0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 2.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 90,
+   "dx": 2.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -2.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -2.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": -0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 0.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 0.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 1.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 1.75,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 2.25,
+   "dy": 0,
+   "dz": 0
+  },
+  {
+   "kind": "instance",
+   "group": "lead",
+   "rot": 270,
+   "dx": 2.75,
+   "dy": 0,
+   "dz": 0
+  }
+ ]
+}

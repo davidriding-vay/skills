@@ -1,0 +1,53 @@
+{
+ "footprint": "CAP0603",
+ "source": "KEMET C-series typical dims (not fetched; Murata GRM31 p.5 and TDK CGA5L3 p.1 for 1206)",
+ "drawing": {
+  "body_x": [
+   1.5,
+   1.7
+  ],
+  "body_y": [
+   0.7,
+   0.9
+  ],
+  "height": [
+   0,
+   0.9
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "ceramic_ivory",
+   "x0": -0.8,
+   "y0": -0.4,
+   "z0": 0,
+   "x1": 0.8,
+   "y1": 0.4,
+   "z1": 0.8
+  },
+  {
+   "kind": "box",
+   "name": "t1",
+   "role": "tin",
+   "x0": -0.8,
+   "y0": -0.4,
+   "z0": 0,
+   "x1": -0.45,
+   "y1": 0.4,
+   "z1": 0.8
+  },
+  {
+   "kind": "box",
+   "name": "t2",
+   "role": "tin",
+   "x0": 0.45,
+   "y0": -0.4,
+   "z0": 0,
+   "x1": 0.8,
+   "y1": 0.4,
+   "z1": 0.8
+  }
+ ]
+}

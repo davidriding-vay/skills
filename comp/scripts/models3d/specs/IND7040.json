@@ -1,0 +1,89 @@
+{
+ "footprint": "IND7040",
+ "source": "Wurth WE-HCI 744311470 rev 005.000; nominal dims (terminal 1.2 wide x 1.8 long); standoff assumed",
+ "drawing": {
+  "body_x": [
+   6.6,
+   7.2
+  ],
+  "body_y": [
+   6.7,
+   7.3
+  ],
+  "height": [
+   0,
+   4
+  ],
+  "span_y": [
+   6.7,
+   7.3
+  ]
+ },
+ "solids": [
+  {
+   "kind": "box",
+   "name": "body",
+   "role": "body",
+   "x0": -3.45,
+   "y0": -3.4,
+   "z0": 0.25,
+   "x1": 3.45,
+   "y1": 3.4,
+   "z1": 3.8,
+   "edge_r": 0.3
+  },
+  {
+   "kind": "box",
+   "name": "t1_foot",
+   "role": "tin",
+   "x0": -0.6,
+   "y0": 1.7,
+   "z0": 0,
+   "x1": 0.6,
+   "y1": 3.5,
+   "z1": 0.25
+  },
+  {
+   "kind": "box",
+   "name": "t1_side",
+   "role": "tin",
+   "x0": -0.6,
+   "y0": 3.3,
+   "z0": 0,
+   "x1": 0.6,
+   "y1": 3.5,
+   "z1": 3
+  },
+  {
+   "kind": "box",
+   "name": "t2_foot",
+   "role": "tin",
+   "x0": -0.6,
+   "y0": -3.5,
+   "z0": 0,
+   "x1": 0.6,
+   "y1": -1.7,
+   "z1": 0.25
+  },
+  {
+   "kind": "box",
+   "name": "t2_side",
+   "role": "tin",
+   "x0": -0.6,
+   "y0": -3.5,
+   "z0": 0,
+   "x1": 0.6,
+   "y1": -3.3,
+   "z1": 3
+  },
+  {
+   "kind": "dot",
+   "name": "pin1_mark",
+   "role": "ink",
+   "cx": -2.5,
+   "cy": 2.5,
+   "r": 0.4,
+   "z1": 3.8
+  }
+ ]
+}

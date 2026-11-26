@@ -1,0 +1,53 @@
+{
+ "footprint": "BANANA-5.5",
+ "source": "Keystone catalog p.111, 575-4 non-insulated standard banana jack: L 5.5, accepts 4.5 plug, panel hole 4.2; flange, shank and socket depth assumed",
+ "drawing": {
+  "body_x": [
+   6.3,
+   6.5
+  ],
+  "body_y": [
+   6.3,
+   6.5
+  ],
+  "height": [
+   0,
+   5.6
+  ]
+ },
+ "solids": [
+  {
+   "kind": "cylinder",
+   "name": "barrel",
+   "role": "metal",
+   "r": 3.2,
+   "cx": 0,
+   "cy": 0,
+   "z0": 0,
+   "z1": 5.5
+  },
+  {
+   "kind": "cylinder",
+   "name": "socket",
+   "role": "cut",
+   "cut_from": [
+    "barrel"
+   ],
+   "r": 2.25,
+   "cx": 0,
+   "cy": 0,
+   "z0": 1,
+   "z1": 5.6
+  },
+  {
+   "kind": "cylinder",
+   "name": "shank",
+   "role": "metal",
+   "r": 2.1,
+   "cx": 0,
+   "cy": 0,
+   "z0": -1.6,
+   "z1": 0
+  }
+ ]
+}
