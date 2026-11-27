@@ -2,8 +2,7 @@
 
 Runs as the LAST step of /comp, by itself, when `altium365_check_setup` returns ok. If it does not, say so
 in one line and skip (the part stays in the scratch libraries). Setup: README text box section 15.
-Needs the eda-agent footprint fix (`desCreateFootprint` returns `footprintId`; reported upstream, patch in the
-user's clone until released).
+Needs the eda-agent footprint fix (`desCreateFootprint` returns `footprintId`). Reported upstream as https://github.com/salitronic/eda-agent/issues/458 and marked DONE (2026-11-27): it ships in a newer eda-agent; the local clone (49+ commits behind origin/main) gets it with `server_update` (ask the user first; the update also changes tool behaviour).
 
 ## Preconditions (check every time)
 1. The part passed `lib_check_schlib` / `lib_check_pcblib`, the symbol links to the footprint, pin/pad parity ok.
