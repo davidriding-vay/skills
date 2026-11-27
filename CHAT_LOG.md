@@ -38,3 +38,5 @@ Create a Nexar account, create an app with the authorization-code grant, redirec
 - The project template files (`HOUSE_STANDARD.md`, `README_TEXTBOX.txt`, `skills.zip`) need a manual update after repo changes.
 
 - 2026-11-27: FAKRA 3D model alignment. Pin positions must be read from the STEP vertices (lib_link_3d_model does not centre the model); tab pad must sit under the housing plate; MB_281 `3.3` dimension runs from the hole-row centre to the tab top (tab y 4.34..5.84). Recorded as SKILL.md notes 4c/4d.
+
+- 2026-11-27: Rule: every symbol is created with its Comment parameter hidden and every placed Comment is hidden on the sheets. Swapping placed managed parts for new components is done by place new + delete old (see reference/mcp-workflow.md). 21 components CMP-00499..00519 released with the 13 new footprints and swapped on the sheets.
