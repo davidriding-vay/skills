@@ -123,3 +123,6 @@ on a placed part, hide it on the instance (`obj_modify` eParameter Name=Comment 
 
 ## Who publishes (2026-11-27, user decision)
 Publish and release run from the main session only. Sub-agents may research and build files, but their publish/release calls are refused by the permission classifier, so they hand over a results line and the main session uploads.
+
+## Item names are unique across symbols, footprints and components (2026-11-27/28)
+Altium 365 refuses a symbol whose item name equals any footprint (or component) item name (`AddALU_ItemsDuplicate item HRID`). Footprints are named by package, never by MPN, so a symbol named by MPN cannot clash. If a footprint was published under an MPN, publish the symbol as `<MPN>-S` (rename the library reference with lib_copy_component new_name, save as `<MPN>-S.SchLib`) and keep the MPN in the MPN parameter and the component Comment. A slash in an MPN becomes `_` in symbol item and file names only. Sub-agents may publish footprints but the main session releases symbols/components (see "Who publishes").
