@@ -74,6 +74,7 @@ Many vendor sites time out or 403 from WSL. Try in this order, and check `head -
 2. LCSC: fetch `https://www.lcsc.com/product-detail/<Cxxxx>.html` (find the C-number with WebSearch), grep it for `datasheet.lcsc.com/datasheet/pdf/<hash>.pdf`, then curl that with `-e https://www.lcsc.com/` (this gave MAX96717 and ADV7280).
 3. ADI/Maxim package outline and land pattern drawings: `https://mds.analog.com/api/public/content/tqfn_<doc-number>.pdf` (e.g. 21-100156 outline, 90-100067 land pattern); pick the package-family prefix that matches.
 4. Mirrors found by WebSearch (ariat-tech.com/datasheet/..., oemstron, pneda). we-online.com returns 403; the WE-TPC catalogue on media.digikey.com has no land pattern, the single-part PDF does.
+4b. Rosenberger: product page `products.rosenberger.com/radio-frequency/connectors/<articleId>/...` lists `/_ocassets/db/<MPN>.pdf` (datasheet), `/_ocassets/mb/MB_<n>.pdf` (PCB layout drawing) and the STEP at `/_stpfind/?articleId=<articleId>` (curl -L follows the redirect). Molex STEP downloads are blocked from WSL: build the model with `lib_create_3d_model` from the catalog drawing or ask the user to download it.
 5. mouser.com / octopart / digikey / alldatasheet return bot pages (13 KB HTML or 403): do not bother.
 Save into the project's `scratch/ds-*/` folder, then ask the user only if all of these fail.
 
