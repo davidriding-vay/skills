@@ -111,3 +111,14 @@ tell the user what was changed and what is still unverified. Do not commit scrat
 
 ## Swapping a placed managed part for another component (2026-11-27)
 The API cannot rewrite ItemGUID/RevisionGUID and Update From Libraries only moves to the latest revision of the SAME item (and runs project-wide). To point a sheet at a new CMP-NNNNN: rename the old designator (`OLD_R1`), `sch_place_vault_components` the new part at the same x/y/rotation with the real designator (`part_id` for multipart), `sch_mirror_component` if the old one was mirrored, compare pin ConnectionX/Y old vs new, `obj_delete` filter `Designator~OLD_*`, hide Comment, save each sheet with `app_save_document`. `sch_reload_document` saves before reloading: it is not an undo.
+
+## Never fan out Altium work (2026-11-27)
+One Altium instance serves every MCP call. Running ~15 sub-agents against it at once crashed it (modal "Access violation in ADVPCB.DLL", only button "Send and Close"), made calls act on another worker's focused library, and left the bridge dead for hours. Fan out only the research (datasheet download, reading pin tables and land patterns into a JSON spec per part, curl and Python only); build, upload and release serially in ONE agent or in the main session. Reserve CMP numbers up front only if nothing else is releasing in parallel.
+
+## Throttling and crash policy for Altium (2026-11-27, user instruction)
+Altium is unstable under load, so drive it slowly and one user at a time:
+- `python3 scripts/tools/pace.py 4` before every Altium MCP call sleeps until 4 s have passed since the last one (shared stamp file `~/.last_altium_call`). Use `items` to batch edits into fewer calls.
+- Restart Altium before a long batch and after every ~2 parts built in a row (`bash scripts/tools/restart_altium.sh`, poll `app_ping`, then `app_recover_script` to relaunch the bridge), and at once when X2.exe passes ~4.5 GB (`powershell.exe -NoProfile -Command "(Get-Process X2).WorkingSet64"`).
+- No renders, 3D views or screenshots unless debugging; close finished documents, keep at most 2 open.
+- Crash dialogs: the user allows pressing any button including "Send and Close" (`app_list_open_dialogs`, `app_press_dialog_button`). If the bridge stays dead: kill X2.exe, start `C:\Program Files\Altium\AD26\X2.EXE`, wait for `app_ping`, `app_recover_script`, then check which files and workspace items already exist before redoing anything.
+- Research (datasheets, dimensions, pin tables as JSON specs) may fan out to many agents; every Altium call stays serial (see "Never fan out Altium work").

@@ -24,6 +24,7 @@ manufacturer datasheet, and imports into Altium without hand fixing.
 - **Never bypass a tool check** (pin table, footprint vs drawing). If a check blocks you, say what differs and
   let the user decide; only the user switches checks off.
 - **Every symbol is created with its `Comment` parameter hidden** (`IsHidden` true, text = the MPN) and it is read back before upload (`obj_query` eParameter Name=Comment, property IsHidden). On sheets, hide every placed Comment too: `obj_modify` eParameter filter `Name=Comment` set `IsHidden` true, per sheet, then save (user rule 2026-11-27).
+- **Drive Altium slowly and alone**: one worker at a time, `scripts/tools/pace.py` between calls, restart Altium regularly, press crash dialogs and carry on (see `reference/mcp-workflow.md`, throttling and crash policy).
 - **Verify by reading back.** Colours, positions and font ids written with `obj_modify` must be queried back.
 - **Be honest about unverified items** (values taken from a part-number code, assumed 3D standoff, etc.).
 
