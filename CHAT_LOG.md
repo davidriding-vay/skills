@@ -36,3 +36,5 @@ Create a Nexar account, create an app with the authorization-code grant, redirec
 - Annotate the sheet (`C?`, `R?` etc. are unnumbered).
 - ROVS2 (27.4 k) uses the 27 k part; EEE-FC1H101P lands are IPC-derived; confirm the 575-4 banana jack hole/pad/body.
 - The project template files (`HOUSE_STANDARD.md`, `README_TEXTBOX.txt`, `skills.zip`) need a manual update after repo changes.
+
+- 2026-11-27: FAKRA 3D model alignment. Pin positions must be read from the STEP vertices (lib_link_3d_model does not centre the model); tab pad must sit under the housing plate; MB_281 `3.3` dimension runs from the hole-row centre to the tab top (tab y 4.34..5.84). Recorded as SKILL.md notes 4c/4d.
