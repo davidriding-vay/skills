@@ -118,7 +118,9 @@ One Altium instance serves every MCP call. Running ~15 sub-agents against it at 
 ## Throttling and crash policy for Altium (2026-11-27, user instruction)
 Altium is unstable under load, so drive it slowly and one user at a time:
 - `python3 scripts/tools/pace.py 4` before every Altium MCP call sleeps until 4 s have passed since the last one (shared stamp file `~/.last_altium_call`). Use `items` to batch edits into fewer calls.
-- Restart Altium before a long batch and after every ~2 parts built in a row (`bash scripts/tools/restart_altium.sh`, poll `app_ping`, then `app_recover_script` to relaunch the bridge), and at once when X2.exe passes ~4.5 GB (`powershell.exe -NoProfile -Command "(Get-Process X2).WorkingSet64"`).
+- Restart Altium ONLY after a real crash (a modal error dialog that stays, or a dead bridge): user rule 2026-11-27, no scheduled restarts. Pace the calls instead.
 - No renders, 3D views or screenshots unless debugging; close finished documents, keep at most 2 open.
 - Crash dialogs: the user allows pressing any button including "Send and Close" (`app_list_open_dialogs`, `app_press_dialog_button`). If the bridge stays dead: kill X2.exe, start `C:\Program Files\Altium\AD26\X2.EXE`, wait for `app_ping`, `app_recover_script`, then check which files and workspace items already exist before redoing anything.
 - Research (datasheets, dimensions, pin tables as JSON specs) may fan out to many agents; every Altium call stays serial (see "Never fan out Altium work").
+
+Sub-agents cannot publish or release to Altium 365: the Claude Code permission classifier refuses `altium365_publish_library_file` / `altium365_release_component` confirm=true from workers. Workers build and verify the SchLib/PcbLib files; the main session publishes and releases (or the user adds permission rules).
