@@ -48,3 +48,4 @@ Create a Nexar account, create an app with the authorization-code grant, redirec
 - 2026-11-27: Decision: publish symbols/footprints and release components from the MAIN session only; workflow workers build and verify files (their publish/release calls are refused). Restart Altium only after a real crash (no scheduled restarts).
 
 - 2026-11-27: Default passive guideline recorded in reference/house-standard.md (capacitors MLCC 0-10 uF 1-10 % 10-50 V X7R 0603; resistors 0-1 GOhm 1 % 0.1-0.5 W 100 ppm 0603). Only house-style components count as "exists" in the workspace. KiCad ADV728X board check: added to the queue RC0603FR-07200KL (CMP-00645), C0603C120J5GACTU (CMP-00646), C0603C220J5GACTU (CMP-00647), GRM188R60J226MEA0D (CMP-00648, exception).
+- 2026-11-27: Old workspace components do not count and will be re-modelled later; a new house-style one is always created. BAT54S-7-F queued as CMP-00649 (Diodes DS11005: pin 1 anode D1, pin 2 cathode D2, pin 3 common).

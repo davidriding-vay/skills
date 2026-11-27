@@ -156,3 +156,4 @@ When a passive is needed and no MPN is given, pick from these and build/release 
 - Capacitors: MLCC, 0 to 10 uF, tolerance 1-10 %, 10-50 V, X7R, 0603. (X7R is not made for small values: below about 100 pF use C0G/NP0; above 10 uF in 0603 only X5R exists; flag such exceptions in the description and the log.)
 - Resistors: 0 to 1 GOhm, 1 %, 0.1 W to 0.5 W, 100 ppm/degC, 0603.
 - Only components built in the house style count as "exists" when checking the workspace: parts released by this skill (CMP-00475 and later, DES parameter in house format, house symbol and footprint). Older colleague parts (CMP-001-..., CMP-009-..., CAP-/RES-/IND-00xxx) are not house style even when the footprint is 0603.
+- The old colleague components are to be deleted one day and completely re-modelled by Claude: when a part is needed always create a new house-style component, never reuse an old one (user, 2026-11-27).
