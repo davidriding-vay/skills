@@ -150,3 +150,9 @@ TO-220AB (Vishay 71195 p.6, built 2026-11-24): vertical mount, origin pad 2, pad
 Chip passive lands (user decision 2026-11-25): RES/CAP 0201-1206 pads are IPC-7351B nominal (density N), never a vendor-specific land pattern, because one footprint serves several vendors.
 
 Three-pin dual series diode (BAV99WT1G, user edit 2026-11-25): two generic diode glyphs in series (pin 1 anode left at body end x=100, pin 2 cathode right at x=600), the common pin 3 on the 100 mil grid at (400,-200) pointing down. The connection is a vertical line from the junction at x=350 (graphically centred between the two glyphs, 50 mil off the grid on purpose) down to y=-200, then a short horizontal line (350,-200)-(400,-200) to the pin root. Wire end of pin 3 is (400,-300).
+
+## Default passive selection (user guideline, 2026-11-27)
+When a passive is needed and no MPN is given, pick from these and build/release it in the house style (0603 footprints RES0603 / CAP0603):
+- Capacitors: MLCC, 0 to 10 uF, tolerance 1-10 %, 10-50 V, X7R, 0603. (X7R is not made for small values: below about 100 pF use C0G/NP0; above 10 uF in 0603 only X5R exists; flag such exceptions in the description and the log.)
+- Resistors: 0 to 1 GOhm, 1 %, 0.1 W to 0.5 W, 100 ppm/degC, 0603.
+- Only components built in the house style count as "exists" when checking the workspace: parts released by this skill (CMP-00475 and later, DES parameter in house format, house symbol and footprint). Older colleague parts (CMP-001-..., CMP-009-..., CAP-/RES-/IND-00xxx) are not house style even when the footprint is 0603.
